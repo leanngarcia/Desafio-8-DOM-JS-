@@ -41,13 +41,17 @@ class Bulto {
     this.altoBulto = 0;
     this.volumenBulto = this.largoBulto * this.anchoBulto * this.altoBulto;
   }
+
+  agregarAArray(bulto) {
+    pedido.listaBultos.push(bulto);
+  }
+
+  calcularVolumen(largo, ancho, alto) {
+    return largo * ancho * alto;
+  }
 }
 
 //calculo volumen del bulto cargado y lo sumo al volumen total del pedido
-function calcularVolumen(largo, ancho, alto) {
-  return largo * ancho * alto;
-}
-
 function pasarCm3AM3(volumen) {
   return volumen / 1000000;
 }
@@ -61,7 +65,7 @@ let pedido = new Pedido(cantBultos, idPedido);
 for (let i = 0; i < cantBultos; i++) {
   let bulto = new Bulto(i + 1);
 
-  pedido.listaBultos.push(bulto);
+  bulto.agregarAArray(bulto);
 
   //carga de peso real del bulto
   bulto.pesoRealBulto = parseFloat(prompt("Ingrese el peso real del bulto nro." + (i + 1) + " en kg."));
@@ -102,7 +106,7 @@ for (let i = 0; i < cantBultos; i++) {
   console.log("Alto del bulto nro " + (i + 1) + ": " + bulto.altoBulto + " cm");
 
   //sumo medidas del bulto al pedido total
-  bulto.volumenBulto = calcularVolumen(bulto.largoBulto, bulto.altoBulto, bulto.anchoBulto);
+  bulto.volumenBulto = bulto.calcularVolumen(bulto.largoBulto, bulto.anchoBulto, bulto.altoBulto);
 
   pedido.volumenTotal += bulto.volumenBulto;
 
