@@ -13,7 +13,7 @@ header {
   height: 100px;
 }
 
-ul {
+header > ul {
   display: flex;
   list-style: none;
   justify-content: flex-end;
@@ -101,7 +101,6 @@ li a {
 .container-cards {
   display: flex;
   justify-content: center;
-  width: max-content;
   margin: 50px 50px 0;
   flex-flow: wrap;
   gap: 50px;
@@ -181,4 +180,18 @@ footer {
   color: white;
   text-align: center;
   padding: 40px;
+}
+
+/*estilos carga-pedido.html*/
+#nuevo-pedido {
+  padding: 10px 20px;
+  background-color: #3882f6;
+  border-radius: 5px;
+  border: 2px solid #1f2937;
+  margin: 20px;
+  color: white;
+}
+
+.carga-pedidos {
+  margin: 50px 30px;
 }
